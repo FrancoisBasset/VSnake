@@ -2,6 +2,7 @@ import Bloc from './Bloc';
 
 export default class Snake {
     constructor() {
+        this.score = 0;
         this.blocs = [];
 
         this.go = ['right', 'left', 'up', 'down'][Math.floor(Math.random() * 4)];
@@ -9,6 +10,7 @@ export default class Snake {
         const y = Math.floor(Math.random() * window.innerWidth);
 
         this.blocs.push(new Bloc(x, y, this.go, 'red'));
+        this.addBloc(this.go);
 
         this.end = false;
     }
@@ -36,7 +38,7 @@ export default class Snake {
     }
 
     updateBloc() {
-        for (let i = 0; this.blocs.length; i++) {
+        for (let i = 0; i < this.blocs.length; i++) {
             switch (this.blocs[i].go) {
                 case 'right':
                     this.blocs[i].x++;
@@ -54,7 +56,12 @@ export default class Snake {
         }
 
 
-        if (this.blocs[0].x < 0 || this.blocs[0].x > screen.availWidth || this.blocs[0].y < 0 || this.blocs[0].y > screen.availHeight) {
+        if (
+            (this.blocs[0].x < 0 && this.blocs[0].go == 'left') ||
+            (this.blocs[0].x + 10 > window.innerWidth && this.blocs[0].go == 'right') ||
+            (this.blocs[0].y < 0 && this.blocs[0].go == 'up') ||
+            (this.blocs[0].y + 10 > window.innerHeight && this.blocs[0].go == 'down')
+         ) {
             this.end = true;
         }
     }
