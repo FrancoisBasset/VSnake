@@ -6,9 +6,9 @@
 import Bloc from './Bloc.vue';
 
 export default {
-    components: {
-        Bloc
-    },
-    props: ['blocs']
-}
+	components: {
+		Bloc
+	},
+	props: ['blocs']
+};
 </script>

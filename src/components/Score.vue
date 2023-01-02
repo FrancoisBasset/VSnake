@@ -20,6 +20,6 @@ label {
 
 <script>
 export default {
-    props: ['score']
-}
+	props: ['score']
+};
 </script>
