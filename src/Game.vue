@@ -45,7 +45,7 @@ export default {
 	data() {
 		return {
 			snake: new snake(),
-			score: parseInt(localStorage.getItem('score')) ?? 0,
+			score: localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0,
 			foods: JSON.parse(localStorage.getItem('foods')) ?? [],
 			speed: localStorage.getItem('speed') ? parseInt(localStorage.getItem('speed')) : 100
 		};
@@ -72,7 +72,9 @@ export default {
 		}, this.speed);
 
 		setInterval(() =>  {
-			this.foods.push(new food());
+			if (!this.snake.end) {
+				this.foods.push(new food());
+			}
 		}, 2000);
 
 		document.addEventListener('keydown', (e) => {
