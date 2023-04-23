@@ -1,5 +1,5 @@
 <template>
-    <Bloc v-for="(bloc, index) in this.blocs" :key="index" :x="bloc.x" :y="bloc.y" :color="bloc.color" />
+    <Bloc v-for="(bloc, index) in blocs" :key="index" :x="bloc.x" :y="bloc.y" :color="bloc.color" />
 </template>
 
 <script>

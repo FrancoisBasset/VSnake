@@ -1,5 +1,5 @@
 <template>
-    <label>{{ this.score }}</label>
+    <label>{{ score }}</label>
 </template>
 
 <style scoped>

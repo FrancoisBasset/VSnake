@@ -1,7 +1,7 @@
 <template>
-    <Snake :blocs="this.snake.blocs" />
-    <Score :score="this.score" />
-	<Food v-for="food in this.foods" :key="food" :x="food.x" :y="food.y" :color="food.color" />
+    <Snake :blocs="snake.blocs" />
+    <Score :score="score" />
+	<Food v-for="food in foods" :key="food" :x="food.x" :y="food.y" :color="food.color" />
 	<div id="buttonDiv">
 		<ResetButton @resetButtonClicked="reset()" class="button" />
 		<SaveButton @saveButtonClicked="save()" class="button" style="float: right" />

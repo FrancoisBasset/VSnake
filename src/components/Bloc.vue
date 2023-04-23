@@ -1,5 +1,5 @@
 <template>
-    <div class="square" :style="{ left: this.x + 'px', top: this.y+ 'px', background: this.color }"></div>
+    <div class="square" :style="{ left: x + 'px', top: y + 'px', background: color }"></div>
 </template>
 
 <style scoped>
