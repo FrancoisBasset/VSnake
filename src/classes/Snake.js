@@ -49,7 +49,7 @@ export default class Snake {
 			this.blocs[i].oldGo = this.blocs[i].go;
 
 			if (i - 1 >= 0) {
-				if (this.blocs[i - 1].go != this.blocs[i].go) {					
+				if (this.blocs[i - 1].go !== this.blocs[i].go) {					
 					this.blocs[i].go = this.blocs[i - 1].oldGo;
 				}
 			}
@@ -71,10 +71,10 @@ export default class Snake {
 		}
 		
 		if (
-			(this.blocs[0].x <= 0 && this.blocs[0].go == 'left') ||
-            (this.blocs[0].x + 10 >= window.innerWidth && this.blocs[0].go == 'right') ||
-            (this.blocs[0].y <= 0 && this.blocs[0].go == 'up') ||
-            (this.blocs[0].y + 10 > window.innerHeight && this.blocs[0].go == 'down')
+			(this.blocs[0].x <= 0 && this.blocs[0].go === 'left') ||
+            (this.blocs[0].x + 10 >= window.innerWidth && this.blocs[0].go === 'right') ||
+            (this.blocs[0].y <= 0 && this.blocs[0].go === 'up') ||
+            (this.blocs[0].y + 10 > window.innerHeight && this.blocs[0].go === 'down')
 		) {
 			this.end = true;
 		}

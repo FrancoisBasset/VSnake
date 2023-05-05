@@ -1,9 +1,9 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
-import Game from './Game.vue';
+import GameBoard from './GameBoard.vue';
 
 import './assets/main.css';
 
-const game = createApp(Game);
+const game = createApp(GameBoard);
 game.use(createPinia());
 game.mount('#game');
